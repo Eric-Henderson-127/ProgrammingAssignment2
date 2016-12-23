@@ -28,6 +28,13 @@ cacheSolve <- function(x, ...) {
   # Takes a list object, as returned from makeCacheMatrix, determines if an inverse matrix is already cached,
   # if not already cached the function calculates the inverse matrix then caches the result, and then returns the
   # cached inverse matrix
+  #
+  # Args:
+  #   x: A list object containing an invertable matrix and helper functions to cache/read an inverted matrix
+  #   ...: Other arguments to be passed to solve function
+  #
+  # Returns:
+  #   output of solve(x, ...) or cached output from prior function call
   m <- x$getinverse()
   if(!is.null(m)) {
     message("getting cached data")
